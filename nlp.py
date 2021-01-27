@@ -14,6 +14,7 @@ for w in words:
 
 
 
+
         preds=nlp(string)
 
 
@@ -35,7 +36,11 @@ for w in words:
 
                     j=1
 
+
                     break
+                else:
+                    string = string.replace(f"{nlp.tokenizer.mask_token}", nlp.tokenizer.decode([p['token']]).strip())
+
             if j==1:
                 break
 
